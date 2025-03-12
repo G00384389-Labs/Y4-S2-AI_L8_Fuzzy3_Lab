@@ -8,7 +8,10 @@ import net.sourceforge.jFuzzyLogic.plot.JFuzzyChart;
 public class Dapping {
 
     public double getDappingLevel(int windBeaufort, int tempCelsius) { 
-        FIS fis = FIS.load("dappingSugeno.fcl", true); 
+    	// for sugeno
+    	FIS fis = FIS.load("dappingSugeno.fcl", true);	
+    	// for Mamdani 
+//        FIS fis = FIS.load("dapping.fcl", true);			
         FunctionBlock fb = fis.getFunctionBlock("getDappingLevel"); 
         fis.setVariable("wind", windBeaufort); 
         fis.setVariable("temperature", tempCelsius); 
